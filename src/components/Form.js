@@ -4,16 +4,20 @@ class Form extends Component {
     constructor(props) {
         super(props);
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handlePersonalChange = this.handlePersonalChange.bind(this);
     }
 
-    handleChange(event) {
-        this.props.onChange(event.target.value);
+    handlePersonalChange(event) {
+        this.props.onPersonalChange(event.target);
     }
 
     render() {
         return(
-            <input type="text" onChange={this.handleChange} value={this.props.value}/>
+            <div>
+                <h3>Personal Info</h3>
+                <input type="text" onChange={this.handlePersonalChange} value={this.props.personalInfo.name} name="name" placeholder="Name"/>
+                <input type="text" onChange={this.handlePersonalChange} value={this.props.personalInfo.phone} name="phone" placeholder="Phone No."></input>
+            </div>
         );
     }
 }

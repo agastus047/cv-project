@@ -6,16 +6,30 @@ class Main extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        value: "",
-        preview: false
+        preview: false,
+        personalInfo: {
+            name: "",
+            phone: "",
+        },
+        eduInfo: {
+            school: "",
+        },
       };
   
-      this.handleChange = this.handleChange.bind(this);
+      this.handlePersonalChange = this.handlePersonalChange.bind(this);
       this.handleClick = this.handleClick.bind(this);
     }
   
-    handleChange(newValue) {
-      this.setState({value:newValue});
+    handlePersonalChange(input) {
+      let propName = input.name;
+      let value = input.value;  
+      
+      let prop = this.state.personalInfo;
+      prop[propName]=value;
+
+      this.setState({
+        prop
+      });
     }
   
     handleClick(event) {
@@ -29,11 +43,11 @@ class Main extends Component {
       let content;
       let btnText;
       if(!isPreviewOn) {
-        content = <Form value={this.state.value} onChange={this.handleChange}/>;
+        content = <Form personalInfo={this.state.personalInfo} onPersonalChange={this.handlePersonalChange}/>;
         btnText = "Preview";
       }
       else {
-        content = <Resume value={this.state.value}/>
+        content = <Resume personalInfo={this.state.personalInfo}/>
         btnText="Edit";
       }
       return(

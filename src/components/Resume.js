@@ -7,7 +7,11 @@ class Resume extends Component {
 
     render() {
         return(
-            <div>{this.props.value}</div>
+            <div>
+                <h3>Personal Info</h3>
+                <div>Name: {this.props.personalInfo.name}</div>
+                <div>Phone No: {this.props.personalInfo.phone}</div>
+            </div>
         );
     }
 }
