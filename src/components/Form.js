@@ -23,18 +23,18 @@ class Form extends Component {
 
     render() {
         return(
-            <div>
-                <h3>Personal Info</h3>
+            <div className="inputForm">
+                <h3>PERSONAL INFO</h3>
                 <input type="text" onChange={this.handlePersonalChange} value={this.props.personalInfo.name} name="name" placeholder="Name"/>
                 <input type="text" onChange={this.handlePersonalChange} value={this.props.personalInfo.address} name="address" placeholder="Address"/>
                 <input type="email" onChange={this.handlePersonalChange} value={this.props.personalInfo.email} name="email" placeholder="Email"/>
                 <input type="text" onChange={this.handlePersonalChange} value={this.props.personalInfo.phone} name="phone" placeholder="Phone No."></input>
-                <h3>Education</h3>
+                <h3>EDUCATION</h3>
                 <input type="text" onChange={this.handleEducationChange} value={this.props.educationInfo.degree} name="degree" placeholder="Degree"/>
                 <input type="text" onChange={this.handleEducationChange} value={this.props.educationInfo.university} name="university" placeholder="University"/>
                 <input type="text" onChange={this.handleEducationChange} value={this.props.educationInfo.start} name="start" placeholder="Start Date" onFocus={(e)=>(e.target.type="date")} onBlur={(e)=>(e.target.type="text")}/>
                 <input type="text" onChange={this.handleEducationChange} value={this.props.educationInfo.end} name="end" placeholder="End Date" onFocus={(e)=>(e.target.type="date")} onBlur={(e)=>(e.target.type="text")}/>
-                <h3>Experience</h3>
+                <h3>EXPERIENCE</h3>
                 <input type="text" onChange={this.handleExperienceChange} value={this.props.experienceInfo.position} name="position" placeholder="Position"/>
                 <input type="text" onChange={this.handleExperienceChange} value={this.props.experienceInfo.company} name="company" placeholder="Company"/>
                 <input type="text" onChange={this.handleExperienceChange} value={this.props.experienceInfo.start} name="start" placeholder="Start Date" onFocus={(e)=>(e.target.type="date")} onBlur={(e)=>(e.target.type="text")}/>

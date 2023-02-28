@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <h2>Resume Builder</h2>
+        <h2 className="mainHeader">RESUME BUILDER</h2>
         <Main />
       </div>
     );

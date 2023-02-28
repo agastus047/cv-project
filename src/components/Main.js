@@ -96,8 +96,8 @@ class Main extends Component {
         btnText="Edit";
       }
       return(
-        <div>
-            <button onClick={this.handleClick}>{btnText}</button>
+        <div className="mainComp">
+            <button onClick={this.handleClick} className="previewBtn">{btnText}</button>
             <>{content}</>
         </div>
       );
