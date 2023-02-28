@@ -7,22 +7,32 @@ class Resume extends Component {
 
     render() {
         return(
-            <div>
-                <h3>Personal Info</h3>
-                <div>Name: {this.props.personalInfo.name}</div>
-                <div>Address: {this.props.personalInfo.address}</div>
-                <div>Email: {this.props.personalInfo.email}</div>
-                <div>Phone No: {this.props.personalInfo.phone}</div>
-                <h3>Education</h3>
-                <div>Degree: {this.props.educationInfo.degree}</div>
-                <div>University: {this.props.educationInfo.university}</div>
-                <div>From: {this.props.educationInfo.start}</div>
-                <div>To: {this.props.educationInfo.end}</div>
-                <h3>Experience</h3>
-                <div>Position: {this.props.experienceInfo.position}</div>
-                <div>Company: {this.props.experienceInfo.company}</div>
-                <div>From: {this.props.experienceInfo.start}</div>
-                <div>To: {this.props.experienceInfo.end}</div>
+            <div className="resume">
+                <div className="left">
+                    <h3>CONTACT</h3>
+                    <div>{this.props.personalInfo.address}</div>
+                    <div>Phone {this.props.personalInfo.phone}</div>
+                    <div>{this.props.personalInfo.email}</div>
+                </div>
+                <div className="right">
+                    <div className="header">
+                        <h2>{this.props.personalInfo.name}</h2>
+                    </div>
+                    <hr></hr>
+                    <div className="experience">
+                        <h3>Experience</h3>
+                        <h4>{this.props.experienceInfo.position}</h4>
+                        <div>{this.props.experienceInfo.company}</div>
+                        <div>{this.props.experienceInfo.start} to {this.props.experienceInfo.end}</div>
+                    </div>
+                    <hr></hr>
+                    <div className="education">
+                        <h3>Education</h3>
+                        <h4>{this.props.educationInfo.degree}</h4>
+                        <div>{this.props.educationInfo.university}</div>
+                        <div>{this.props.educationInfo.start} to {this.props.educationInfo.end}</div>
+                    </div>
+                </div>
             </div>
         );
     }
