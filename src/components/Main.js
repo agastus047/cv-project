@@ -27,30 +27,21 @@ const Main = () => {
     let propName = input.name;
     let value = input.value;  
     
-    let prop = personalInfo;
-    prop[propName]=value;
-
-    setPersonalInfo(prop);
+    setPersonalInfo({...personalInfo,[propName]:value});
   };
 
   const handleEducationChange = (input) => {
     let propName = input.name;
     let value = input.value;
 
-    let prop = eduInfo;
-    prop[propName]=value;
-
-    setEduInfo(prop);
+    setEduInfo({...eduInfo,[propName]:value});
   };
 
   const handleExperienceChange = (input) => {
     let propName = input.name;
     let value = input.value;
 
-    let prop = workInfo;
-    prop[propName]=value;
-
-    setWorkInfo(prop);
+    setWorkInfo({...workInfo,[propName]:value});
   };
 
   const handleClick = () => {
